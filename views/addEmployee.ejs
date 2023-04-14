@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>employee info</title>
+    <link rel="stylesheet" href="/css/addEmployee.css">
+</head>
+<body>
+    <%- include('layouts/header') %>
+    <%if(message){%>
+        <p class="err_msg"><%-message%></p>
+    <%}%>
+    <div class="mainSection">
+        <div class="form_title"><h4>Employee Contact Form</h4></div>
+        <div class="mainInput_section">
+            <form action="/addEmployee" method="POST">
+                <div class="input_section">
+                    <div class="input_title">Employee Full Name</div>
+                    <div><input type="text" name="fullName" required></div>
+                </div>
+                <div class="input_section">
+                    <div class="input_title">Job Title</div>
+                    <div><input type="text" name="jobTitle" required></div>
+                </div>
+                <div class="input_section">
+                    <div class="input_title">phone Number</div>
+                    <div><input type="text" name="phoneNum" required></div>
+                </div>
+                <div class="input_section">
+                    <div class="input_title">Email</div>
+                    <div><input type="text" name="email" required></div>
+                </div>
+                <div class="input_section">
+                    <div class="input_title">Address</div>
+                    <div><textarea name="address" id="" cols="62" rows="6" required></textarea></div>
+                </div>
+                <div class="input_section">
+                    <div class="input_title">City</div>
+                    <div><input type="text" name="city" required></div>
+                </div>
+                <div class="input_section">
+                    <div class="input_title">State</div>
+                    <div><input type="text" name="state" required></div>
+                </div>
+                <div class="input_section">
+                    <div class="input_title">Primary Emergency Contact</div>
+                    <div><input type="text" name="primEmergency_contactName" required></div>
+                </div>
+                <div class="input_section">
+                    <div class="input_title">Phone Number</div>
+                    <div><input type="text" name="primEmergency_phoneNum" required></div>
+                </div>
+                <div class="input_section">
+                    <div class="input_title">Relationship</div>
+                    <div><input type="text" name="primEmergency_relation" required></div>
+                </div>
+                <div class="input_section">
+                    <div class="input_title">Secondary Emergency Contact</div>
+                    <div><input type="text" name="secEmergency_contactName" required></div>
+                </div>
+                <div class="input_section">
+                    <div class="input_title">Phone Number</div>
+                    <div><input type="text" name="secEmergency_phoneNum" required></div>
+                </div>
+                <div class="input_section">
+                    <div class="input_title">Relationship</div>
+                    <div><input type="text" name="secEmergency_relation" required></div>
+                </div>
+                <div class="submit_div"><button type="submit" name="submit" value="submit">Submit</button></div>
+            </form>
+        </div>
+    </div>
+</body>
+</html>

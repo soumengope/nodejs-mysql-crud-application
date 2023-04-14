@@ -1,0 +1,64 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+    <%- include('layouts/header') %> 
+
+
+    <table style="width:100%" class="table_class">
+        <tr>
+          <th>Id</th>
+          <th>Full Name</th>
+          <th>Job Title</th>
+          <th>Phone Number</th>
+          <th>Email</th>
+          <th>Address</th>
+          <th>City</th>
+          <th>Manage</th>
+        </tr>
+        <% data.forEach((elem)=>{ %> 
+          <tr class="data_list">
+            <td><%- elem.user_id %></td>
+            <td><%- elem.employee_fullName %></td>
+            <td><%- elem.job_title %></td>
+            <td><%- elem.phone_num %></td>
+            <td><%- elem.email %></td>
+            <td><%- elem.address %></td>
+            <td><%- elem.city %></td>
+            <td width="80px">
+              <div class="edit_delete">
+                  <div class="editUpdate">
+                    <a href="/edit/<%-elem.user_id%>"><img src="/photos/edit-icon.png" width="20px" height="20px" alt="edit"></a>
+                  </div>
+                  <div class="delete">
+                    <a href="/delete/<%-elem.user_id%>"><img src="/photos/delete-icon.png" width="20px" height="20px" alt=""></a>
+                  </div>
+              </div>
+            </td>
+          </tr>
+        <% }) %>
+        
+      </table>
+      <div class="main_pagination">
+     <% if(page > 1) { %> 
+      <div class="prev"><a href="/?page=<%=page-1%>"><button>Previous</button></a></div>
+    <% } %>
+    <% for(let i = iterator; i <= endingLink; i++) { %>
+        <% if(i === page) { %>
+          <div class="index"><a class="pagination_button" href="/?page=<%=i%>"><button><%=i%></button></a></div>
+        <% continue; %>
+    <% } %>
+    <div class="index"><a href="/?page=<%=i%>"><button><%=i%></button></a></div>
+        <% } %>
+        <% if(page < numberOfPages) { %> 
+          <div class="next"><a href="/?page=<%=page+1%>"><button>Next</button></a></div>
+         <% } %>
+      </div>
+</body>
+</html>

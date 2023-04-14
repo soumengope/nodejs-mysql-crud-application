@@ -1,0 +1,74 @@
+td
+{
+    border:1px solid black;
+    line-height:20px;
+}
+.edit_delete
+{
+    display:flex;
+    gap:20px;
+    justify-content: center;
+}
+.table_class
+{
+    text-align:center;
+    margin-top:20px;
+}
+
+.main_pagination{
+    margin:0 auto;
+    padding-top:30px;
+    text-align:center;
+    display:flex;
+    justify-content: center;
+    gap:10px;
+}
+.main_pagination a{
+    text-decoration:none;
+}
+.prev button{
+    width:90px;
+    height:30px;
+    border:1px solid black;
+    cursor:pointer;
+    font-size:18px;
+}
+.index button{
+    width:50px;
+    height:30px;
+    border:1px solid black;
+    cursor:pointer;
+    font-size:18px;
+}
+.next button{
+    width:90px;
+    height:30px;
+    border:1px solid black;
+    cursor:pointer;
+    font-size:18px;
+}
+.search_bar
+{
+    margin:0 auto;
+    width:40%;
+    margin-top:10px;
+    text-align:center;
+    margin-bottom:10px;
+}
+.search_bar input{
+    width:60%;
+    height:30px;
+}
+.search_bar button{
+    width:15%;
+    height:35px;
+    cursor:pointer;
+}
+th{
+    background:rgb(118, 87, 138);
+    color:white;
+    height:30px;
+}
+.data_list{
+    color:blue;
+}

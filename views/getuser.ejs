@@ -1,0 +1,57 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+    <%- include('layouts/header') %> 
+
+    <div class="search_bar">
+      <form action="/getuser" method="POST">
+        <input type="text" id="search_inp" name="fullName" placeholder="search using employee full name" min="4" max="15" required >
+        <span id="search_span"></span>
+        <button name="submit" type="submit" >Submit</button>
+      </form>
+    </div>
+
+    <table style="width:100%" class="table_class">
+        <tr>
+          <th>Id</th>
+          <th>Full Name</th>
+          <th>Job Title</th>
+          <th>Phone Number</th>
+          <th>Email</th>
+          <th>Address</th>
+          <th>City</th>
+          <th>Manage</th>
+        </tr>
+        <% data.forEach((elem)=>{ %> 
+            <% if(elem.user_id > 0){%>
+            <tr class="data_list">
+              <td><%- elem.user_id %></td>
+              <td><%- elem.employee_fullName %></td>
+              <td><%- elem.job_title %></td>
+              <td><%- elem.phone_num %></td>
+              <td><%- elem.email %></td>
+              <td><%- elem.address %></td>
+              <td><%- elem.city %></td>
+              <td width="80px">
+                <div class="edit_delete">
+                    <div class="editUpdate">
+                      <a href="/edit/<%-elem.user_id%>"><img src="/photos/edit-icon.png" width="20px" height="20px" alt="edit"></a>
+                    </div>
+                    <div class="delete">
+                      <a href="/delete/<%-elem.user_id%>"><img src="/photos/delete-icon.png" width="20px" height="20px" alt=""></a>
+                    </div>
+                </div>
+              </td>
+            </tr>
+            <%}%>
+          <% }) %>
+      </table>
+</body>
+</html>
